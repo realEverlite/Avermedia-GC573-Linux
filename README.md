@@ -18,6 +18,7 @@ This repository contains a community-maintained version of the AVerMedia GC573 L
 ## ⚠️ Known Issues
 
 *   **Capture Instability:** Capture is currently unstable. Invoking a stream (e.g., via OBS or `v4l2-ctl`) may result in a kernel schedule bug or system freeze. Contributions are welcome to resolve the interrupt/scheduling conflict.
+*   The system log (dmesg) often shows a __schedule_bug or workqueue warning when the capture starts, indicating a potential scheduling conflict within the binary blob.
 
 ## 🛠️ How to Build & Install
 
@@ -29,7 +30,7 @@ This repository contains a community-maintained version of the AVerMedia GC573 L
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/[your-username]/Avermedia-GC573-Linux.git
+    git clone https://github.com/realEverlite/Avermedia-GC573-Linux.git
     cd Avermedia-GC573-Linux
     ```
 
@@ -70,5 +71,6 @@ The driver includes a **binary-patched** static library (`AverMediaLib_64.a`) wh
 
 ## Acknowledgements
 
+This project is a fork of the original work by derrod, updated for modern kernels.
 Based on the original AverMedia Linux driver for CL511HN.
 Updated and patched for Kernel 6.17+ by the community.
